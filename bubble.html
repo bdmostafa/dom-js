@@ -17,16 +17,42 @@
             <li class="item">Explicabo iusto vel est quia.</li>
             <li class="item">Quos velit odit sunt in?</li>
         </ul>
+        <button id="add-new">Add New</button>
     </div>
     <script>
-        document.getElementById('container').addEventListener('click', function (event) {
-            console.log('container clicked')
+        // document.getElementById('container').addEventListener('click', function (event) {
+        //     console.log('container clicked')
+        // })
+        // document.getElementById('my-list').addEventListener('click', function (event) {
+        //     console.log('ul clicked')
+        //     event.stopImmediatePropagation();
+        // })
+        // document.getElementById('first').addEventListener('click', function (event) {
+        //     console.log('first item clicked')
+        //     event.stopPropagation();
+        // })
+
+        // var items = document.getElementsByClassName('item');
+        // for (let i = 0; i < items.length; i++) {
+        //     var item = items[i];
+        //     item.addEventListener('click', function (event) {
+        //         // console.log(this)
+        //         // console.log(event.target.innerText)
+        //         // console.log(event.target.parentNode)
+        //         event.target.parentNode.removeChild(event.target)
+        //     })
+        // }
+
+        document.getElementById('add-new').addEventListener('click', function () {
+            const itemParent = document.getElementById('my-list');
+            const newItem = document.createElement('li');
+            newItem.innerText = 'This is new item';
+            itemParent.appendChild(newItem);
         })
+
         document.getElementById('my-list').addEventListener('click', function (event) {
-            console.log('ul clicked')
-        })
-        document.getElementById('first').addEventListener('click', function (event) {
-            console.log('first item clicked')
+            // console.log(this, event.target);
+            event.target.parentNode.removeChild(event.target);
         })
     </script>
 </body>
